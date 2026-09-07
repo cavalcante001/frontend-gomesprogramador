@@ -14,7 +14,7 @@ export const site = {
    * o arquivo (qualquer proporção quadrada funciona; ela é recortada em círculo).
    */
   /** Seu nome, usado no hero, no alt da foto e nos metadados. */
-  person: "Paulo Victor Cavalcante de Lima Gomes",
+  person: "Paulo Gomes",
   role: "Desenvolvedor Fullstack Sênior",
   // TODO: ajuste o headline e o resumo
   headline: "Desenvolvedor Fullstack Sênior",

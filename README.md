@@ -6,7 +6,6 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![MUI](https://img.shields.io/badge/MUI-v9-007FFF?style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![pnpm](https://img.shields.io/badge/pnpm-v11-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](https://pnpm.io/)
 
 <br />
@@ -25,7 +24,6 @@ Código-fonte do portfólio disponível em [gomesprogramador.com.br](https://gom
 - **App Router com Turbopack**: renderização estática ultra-otimizada (SSG) e Server Components.
 - **Material UI (MUI v9) + Emotion SSR**: integrado via `@mui/material-nextjs` para renderização limpa e zero flash de estilo.
 - **Geração Dinâmica de PDF**: endpoint nativo de servidor (`/api/curriculo`) que compila o currículo em tempo real via `@react-pdf/renderer`.
-- **Docker Multi-Stage Build**: imagem de produção mínima baseada em `node:24-slim` e modo standalone do Next.js.
 - **Supply-Chain Seguro com pnpm v11**: configuração com lockfile estrito e políticas de integridade.
 
 ---
@@ -38,7 +36,6 @@ Código-fonte do portfólio disponível em [gomesprogramador.com.br](https://gom
 - **Estilização & Componentes:** [Material UI (MUI 9)](https://mui.com/) & [TailwindCSS v4](https://tailwindcss.com/)
 - **Geração de PDF:** [@react-pdf/renderer](https://react-pdf.org/)
 - **Package Manager:** [pnpm](https://pnpm.io/)
-- **Containerização:** [Docker](https://www.docker.com/)
 
 ---
 
@@ -56,7 +53,6 @@ Código-fonte do portfólio disponível em [gomesprogramador.com.br](https://gom
 ├── content/
 │   └── site.ts            # Única fonte da verdade de dados do portfólio
 ├── public/                # Assets públicos (imagens, badges, certificados, vídeos)
-├── Dockerfile             # Multi-stage Dockerfile otimizado para standalone
 └── package.json
 ```
 
@@ -87,17 +83,3 @@ Código-fonte do portfólio disponível em [gomesprogramador.com.br](https://gom
    ```
 
 4. Acesse no navegador: [http://localhost:3000](http://localhost:3000)
-
----
-
-## Executando com Docker
-
-O projeto já conta com um `Dockerfile` multi-stage pronto para produção em modo `standalone`:
-
-```bash
-# Construir a imagem Docker
-docker buildx build -t gomesprogramador .
-
-# Executar o container na porta 3000
-docker run -p 3000:3000 gomesprogramador
-```

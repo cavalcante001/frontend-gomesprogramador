@@ -216,6 +216,20 @@ export function ResumeDocument() {
                 {site.url}
               </Link>
             </View>
+
+            {/* Contato / Telefone */}
+            <View style={styles.contactRow}>
+              <Svg style={styles.contactIcon} viewBox="0 0 24 24">
+                <Path
+                  fill="#64748b"
+                  d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                />
+              </Svg>
+              <Text style={styles.contactLabel}>Contato:</Text>
+              <Link src={`tel:+55${site.whatsapp.replace(/^55/, "")}`} style={styles.contactLink}>
+                {site.phone}
+              </Link>
+            </View>
           </View>
         </View>
 

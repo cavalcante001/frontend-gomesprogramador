@@ -58,25 +58,6 @@ export function SiteFooter() {
           >
             Voltar ao topo
           </Button>
-
-          <Box
-            component="a"
-            href="/login"
-            sx={{
-              color: "text.secondary",
-              textDecoration: "none",
-              fontSize: 12,
-              opacity: 0.6,
-              transition: "opacity 0.2s ease, color 0.2s ease",
-              "&:hover": {
-                opacity: 1,
-                color: "primary.main",
-                textDecoration: "underline",
-              },
-            }}
-          >
-            Área restrita
-          </Box>
         </Stack>
       </Container>
     </Box>

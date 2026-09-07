@@ -29,6 +29,7 @@ export const site = {
    */
   whatsapp: "5561991133345",
   whatsappMessage: "Olá, Paulo! Vim pelo gomesprogramador.",
+  phone: "61 9 9113-3345",
   // TODO: coloque a URL final do site (usada nas meta tags / OG)
   url: "https://gomesprogramador.com.br",
 } as const;

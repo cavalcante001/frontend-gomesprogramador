@@ -47,7 +47,6 @@ Código-fonte do portfólio disponível em [gomesprogramador.com.br](https://gom
 │   ├── _lib/              # Provedores, tema MUI e utilitários
 │   ├── api/               # Route Handlers / endpoints backend (ex: /api/curriculo)
 │   ├── artigos/           # Páginas estáticas com SSG dos artigos
-│   ├── login/             # Rota de login com componentes colocalizados
 │   ├── layout.tsx         # Layout raiz e fontes
 │   └── page.tsx           # Página inicial (Home)
 ├── content/

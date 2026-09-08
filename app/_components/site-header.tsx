@@ -18,8 +18,6 @@ const links = [
   { href: "/#formacao", label: "Formação" },
   { href: "/#experiencia", label: "Experiência" },
   { href: "/#certificacoes", label: "Certificações" },
-  { href: "/#projetos", label: "Projetos" },
-  { href: "/#artigos", label: "Artigos" },
   { href: "/#contato", label: "Contato" },
 ];
 

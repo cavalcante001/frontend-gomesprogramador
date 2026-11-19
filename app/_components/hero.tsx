@@ -134,8 +134,8 @@ export function Hero() {
               order: { xs: -1, lg: 1 },
               flexShrink: 0,
               position: "relative",
-              width: { xs: 210, sm: 250, md: 295 },
-              aspectRatio: "0.85",
+              width: { xs: 215, sm: 255, md: 305 },
+              aspectRatio: "0.895",
               mx: { xs: "auto", lg: 0 },
               mt: { xs: 2, lg: 0 },
             }}
@@ -206,9 +206,9 @@ export function Hero() {
                   src={perfil}
                   alt={`Retrato de ${site.person}`}
                   fill
-                  sizes="(max-width: 600px) 220px, (max-width: 900px) 260px, 300px"
+                  sizes="(max-width: 600px) 220px, (max-width: 900px) 260px, 310px"
                   priority
-                  style={{ objectFit: "cover", objectPosition: "center 18%" }}
+                  style={{ objectFit: "cover", objectPosition: "center top" }}
                 />
               </Box>
             </Box>

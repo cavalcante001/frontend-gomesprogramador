@@ -12,10 +12,12 @@ import { site } from "@/content/site";
 import { TypedHeadline } from "./typed-headline";
 
 /**
- * Formato de arco inspirado nos arcos do Palácio do Itamaraty —
- * topo semicircular e base com cantos levemente arredondados.
+ * Recorte angular da foto — dois cantos opostos cortados (hexágono), a
+ * mesma linguagem visual dos botões acima, em vez do círculo padrão do
+ * Avatar do MUI. Usado tanto na foto quanto na moldura vermelha atrás dela.
  */
-const photoBorderRadius = "9999px 9999px 20px 20px";
+const photoClipPath =
+  "polygon(18% 0%, 100% 0%, 100% 82%, 82% 100%, 0% 100%, 0% 18%)";
 
 /** Envolve cada ocorrência exata de uma frase em `<strong>` com a cor de destaque. */
 function highlight(text: string, phrases: string[]) {
@@ -134,30 +136,33 @@ export function Hero() {
               order: { xs: -1, lg: 1 },
               flexShrink: 0,
               position: "relative",
-              width: { xs: 215, sm: 255, md: 305 },
-              aspectRatio: "0.895",
+              width: { xs: 200, sm: 240, md: 300 },
+              aspectRatio: "1",
               mx: { xs: "auto", lg: 0 },
               mt: { xs: 2, lg: 0 },
             }}
           >
-            {/* Glow ambiente — acompanha a silhueta em arco do Itamaraty */}
+            {/* Glow ambiente — separado do recorte, porque clip-path também
+                cortaria um box-shadow aplicado direto na forma. */}
             <Box
               aria-hidden
               sx={{
                 position: "absolute",
-                inset: "-18%",
-                borderRadius: photoBorderRadius,
+                inset: "-20%",
+                borderRadius: "50%",
                 background:
                   "radial-gradient(closest-side, rgba(0, 145, 255, 0.35), transparent 70%)",
-                filter: "blur(6px)",
+                filter: "blur(4px)",
               }}
             />
 
             {/*
-              Moldura em arco do Palácio do Itamaraty com feixe de luz que
-              percorre o contorno: o ::before é um conic-gradient gigante (250%)
-              girando atrás; `isolation: isolate` + `overflow: hidden` deixam
-              à mostra a fresta de ~3px ao redor do arco.
+              Borda que "percorre" o contorno em vez de uma borda fixa
+              (inspirado em abdullah-warraich-ch.vercel.app): o ::before é um
+              conic-gradient gigante (250%) girando atrás; `isolation: isolate`
+              + `overflow: hidden` só deixam à mostra a fresta de ~3px entre
+              este wrapper e a foto por dentro — essa fresta é o que parece
+              "correr" ao redor conforme o gradiente gira.
             */}
             <Box
               sx={{
@@ -167,9 +172,7 @@ export function Hero() {
                 p: "3px",
                 isolation: "isolate",
                 overflow: "hidden",
-                borderRadius: photoBorderRadius,
-                bgcolor: "rgba(0, 145, 255, 0.16)",
-                boxShadow: "0 20px 50px rgba(0, 0, 0, 0.45)",
+                clipPath: photoClipPath,
                 "&::before": {
                   content: '""',
                   position: "absolute",
@@ -179,7 +182,7 @@ export function Hero() {
                   width: "250%",
                   aspectRatio: "1",
                   background:
-                    "conic-gradient(transparent 0deg, transparent 100deg, #0091ff 145deg, #38bdf8 180deg, #0091ff 215deg, transparent 260deg, transparent 360deg)",
+                    "conic-gradient(transparent 0deg, transparent 110deg, #0091ff 150deg, #0091ff 210deg, transparent 250deg, transparent 360deg)",
                   transform: "translate(-50%, -50%) rotate(0deg)",
                   animation: "heroPhotoBorderSpin 4s linear infinite",
                 },
@@ -197,7 +200,7 @@ export function Hero() {
                   position: "relative",
                   width: "100%",
                   height: "100%",
-                  borderRadius: "9999px 9999px 17px 17px",
+                  clipPath: photoClipPath,
                   overflow: "hidden",
                   bgcolor: "background.paper",
                 }}
@@ -206,9 +209,9 @@ export function Hero() {
                   src={perfil}
                   alt={`Retrato de ${site.person}`}
                   fill
-                  sizes="(max-width: 600px) 220px, (max-width: 900px) 260px, 310px"
+                  sizes="(max-width: 600px) 220px, (max-width: 900px) 260px, 300px"
                   priority
-                  style={{ objectFit: "cover", objectPosition: "center top" }}
+                  style={{ objectFit: "cover" }}
                 />
               </Box>
             </Box>
